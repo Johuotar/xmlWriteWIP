@@ -52,7 +52,7 @@ while (csvloop < len(csvlist)):#stop when csv list completed
                                      if dictExists == False:
                                              dictExists = True
                                              AnnoDict = { AnnotationID : []}
-                                     
+                                     #Try something like this: dic.setdefault(key,[]).append(value)
                                      AnnoDict[AnnotationID].append((Class1, row[a]))#KEY ERROR, mayby trying to add duplicates
                                      AnnoDict[AnnotationID].append((Class2, row[b]))
                                      AnnoDict[AnnotationID].append((Class3, row[c]))
