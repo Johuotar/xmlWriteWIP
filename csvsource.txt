@@ -1,2 +1,2 @@
-C:\Users\jmfhuo\Desktop\NewCsv2Xml\clusters.0000.unique.csv
-C:\Users\jmfhuo\Desktop\NewCsv2Xml\clusters.0000.unique2.csv
+csv1.csv
+csv2.csv
