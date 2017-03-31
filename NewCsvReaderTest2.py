@@ -5,10 +5,6 @@ import collections as C
 import xml.etree.ElementTree as ET
 import os#dir paths
 
-#script_dir = os.path.dirname(__file__)
-#rel_csv_path = "csvsource.txt"
-#abs_csv_path = os.path.join(script_dir, rel_csv_path)
-
 infile = S.argv[1]
 csvfile = open(infile, "r")
 csvlist = [x.strip() for x in csvfile.readlines()]
@@ -22,9 +18,9 @@ for csv in csvlist:
                 fileReader = CS.reader(file, delimiter=';', quotechar='|')
                 print("opened " + csv)
 
-                header = next(fileReader)#Python 3 has different kind of next 
+                header = next(fileReader)#Python 3 has different kind of next
                 while not "sentence id" in header:
-                        next(header)#Python 3 has different kind of next 
+                        next(header)
 
                 IdCol = None
                 AnnoCols = {}
