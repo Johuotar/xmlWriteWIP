@@ -1,5 +1,5 @@
 #Python 3.6
-import csv
+import csv as CS
 import xml.etree.ElementTree as ET
 import os
 import NewCsvReaderTest2
@@ -12,14 +12,23 @@ res_xml_path = os.path.join(script_dir, "Results\\")
 
 xmlfile = open(abs_xml_path,"r")
 xmllist = xmlfile.read().splitlines()
-AnnoList = []
-KeyList = []
+#AnnoList = []
+#KeyList = []
 
 
 for xml in xmllist:
     tree = ET.parse(xml)
     print(xml + " parsed to tree")
     root = tree.getroot()
+
+    for node in root.findall("sentence_id"):
+        print("found sentence_id")
+        final_path = os.path.join(res_xml_path, xml)               
+        tree.write(final_path,encoding="UTF-8")
+        print(final_path)
+xmlfile.close()
+print("xmlfile closed")
+
 '''
     for key in AnnoDict:
         print("looking for: " + str(key))
@@ -33,18 +42,9 @@ for xml in xmllist:
             print(KeyList)
             print(AnnoList)
             print(data)
-'''
-    for node in root.findall("sentence_id")
-        print("found sentence_id")
-'''
+
             for a, b in enumerate(AnnoDict):
                 
                 sub = ET.SubElement(data, a)
                 sub.text = b
-                '''
-        final_path = os.path.join(res_xml_path, xml)
-                                
-        tree.write(final_path,encoding="UTF-8")
-        print(final_path)
-xmlfile.close()
-print("xmlfile closed")
+'''
