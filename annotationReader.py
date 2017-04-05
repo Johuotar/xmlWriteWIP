@@ -23,17 +23,16 @@ for xml in xmllist:
 
     for node in root.findall('.//Sentence'):
         if node.attrib['sentence_id']:
-            print("node has attr")
-            print(node.attrib)
-            [y[1] for y in node.attrib]
-            if y in AnnoDict:
+            #Sentence node with sentence_id found!
+            if node.attrib['sentence_id'] in AnnoDict:
+                print("AnnoDict has same attr:")
+                print(node.attrib['sentence_id'])
+                
                 #sub = ET.SubElement(node, AnnoDict[node.attrib])
-                print(AnnoDict[node.attrib])
-            #tag = SubElement(node,'TagName')
-            #tag.attrib['attr'] = 'AttribValue'
-
-        #compare id to AnnoDict id's get related annotations
-        #add annotations to node
+                #tag = SubElement(node,'TagName')
+                #tag.attrib['attr'] = 'AttribValue'
+                #compare id to AnnoDict id's get related annotations
+                #add annotations to node
         
     final_path = os.path.join(res_xml_path, xml)               
     tree.write(final_path,encoding="UTF-8")
