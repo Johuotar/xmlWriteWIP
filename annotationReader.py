@@ -29,10 +29,14 @@ for xml in xmllist:
                 print(node.attrib['sentence_id'])#id shared with Dict
                 print(AnnoDict[node.attrib['sentence_id']])#prints tuple
                 CurTuple = AnnoDict[node.attrib['sentence_id']]
+                print(CurTuple)
+                print(len(CurTuple))
+                a, = CurTuple
                 
-                
-                sub = ET.SubElement(node, CurTuple[0])
-                sub.text = CurTuple[1]
+                sub = ET.SubElement(node, a)
+                print("what is a?")
+                print(a)
+                sub.text = b
                 #tag = SubElement(node,'TagName')
                 #tag.attrib['attr'] = 'AttribValue'
                 #compare id to AnnoDict id's get related annotations
