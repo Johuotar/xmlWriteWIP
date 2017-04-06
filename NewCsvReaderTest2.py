@@ -37,9 +37,9 @@ for csv in csvlist:
                         AnnotationID = row[IdCol] # sentence id
                         for anno_col in AnnoCols.keys():
                                 if row[anno_col].strip():
-                                     print(AnnoCols[anno_col])#Show the data that goes 2 tuple
-                                     print(row[anno_col])#cause of problem down here
-                                     print("^These 2 go to tuple^")#But not as separate. len = 1
+                                     print(AnnoCols[anno_col])
+                                     print(row[anno_col])
+                                     print("^These 2 go to tuple^")
 
                                      AnnoDict[AnnotationID].append((AnnoCols[anno_col], row[anno_col]))
                                             
