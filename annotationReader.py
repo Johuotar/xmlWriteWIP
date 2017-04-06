@@ -26,9 +26,13 @@ for xml in xmllist:
             #Sentence node with sentence_id found!
             if node.attrib['sentence_id'] in AnnoDict:
                 print("AnnoDict has same attr:")
-                print(node.attrib['sentence_id'])
+                print(node.attrib['sentence_id'])#id shared with Dict
+                print(AnnoDict[node.attrib['sentence_id']])#prints tuple
+                CurTuple = AnnoDict[node.attrib['sentence_id']]
                 
-                #sub = ET.SubElement(node, AnnoDict[node.attrib])
+                
+                sub = ET.SubElement(node, CurTuple[0])
+                sub.text = CurTuple[1]
                 #tag = SubElement(node,'TagName')
                 #tag.attrib['attr'] = 'AttribValue'
                 #compare id to AnnoDict id's get related annotations
