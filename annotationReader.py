@@ -28,11 +28,16 @@ for xml in xmllist:
                 CurDict = AnnoDict[node.attrib['sentence_id']]
                 for Tupl in CurDict:
                     a, b = Tupl
-                    sub = ET.SubElement(node, a)
-                    sub.text = b
+                    print(a + b)
+                    sub = ET.SubElement(node, 'Annotation')
+                    sub.set('type', a)
+                    sub.text(b)
+                    print("finished one loop of xml writing")
+                    #sub = ET.SubElement(node, a) original , for reference
+                    #sub.text = b
     xmlName = xml.split("\\")[-1]
     print(xmlName)
-    res_path = os.path.join(script_dir, + 'Results\\' + xmlName)
+    res_path = os.path.join(script_dir, + 'Results' + xmlName)
     tree.write(res_path,encoding="UTF-8")
     print(res_path)
 xmlfile.close()
