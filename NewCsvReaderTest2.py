@@ -37,10 +37,6 @@ for csv in csvlist:
                         AnnotationID = row[IdCol] # sentence id
                         for anno_col in AnnoCols.keys():
                                 if row[anno_col].strip():
-                                     print(AnnoCols[anno_col])
-                                     print(row[anno_col])
-                                     print("^These 2 go to tuple^")
-
                                      AnnoDict[AnnotationID].append((AnnoCols[anno_col], row[anno_col]))
                                             
                 print(AnnoDict) #Lets see what the final result is
