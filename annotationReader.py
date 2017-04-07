@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import os
 import NewCsvReaderTest2
 from NewCsvReaderTest2 import AnnoDict
+import indent.py#Todo:
 #cd C:\Users\jmfhuo\Desktop\xmlWriteWIP\
 #py annotationReader.py csvsource.txt
 script_dir = os.path.dirname(__file__)
@@ -31,13 +32,13 @@ for xml in xmllist:
                     print(a + b)
                     sub = ET.SubElement(node, 'Annotation')
                     sub.set('type', a)
-                    sub.text(b)
+                    sub.text = b
                     print("finished one loop of xml writing")
                     #sub = ET.SubElement(node, a) original , for reference
                     #sub.text = b
     xmlName = xml.split("\\")[-1]
     print(xmlName)
-    res_path = os.path.join(script_dir, + 'Results' + xmlName)
+    res_path = os.path.join('Results', xmlName)
     tree.write(res_path,encoding="UTF-8")
     print(res_path)
 xmlfile.close()
