@@ -271,7 +271,8 @@
             <Tag>PUNCT</Tag>
           </Baseform>
         </Token>
-      <Annotation type="perspective">placeholder 1431 #1</Annotation></Sentence>
+        <Annotation type="perspective">placeholder 1431 #1</Annotation>
+      </Sentence>
       <Sentence sentence_id="3977483865">
         <Text>Tärykalvo värähtelee ääniaallon osuessa siihen ja muuttaa ääniaallon mekaaniseksi energiaksi, mikä johdetaan sisäkorvaan, jolloin ääniaalto voidaan aistia äänenä.</Text>
         <Token>
