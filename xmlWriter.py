@@ -2,11 +2,11 @@
 import csv as CS
 import xml.etree.ElementTree as ET
 import os
-import NewCsvReaderTest2
-from NewCsvReaderTest2 import AnnoDict
-import indent as IND#Todo:
+import csvReader
+from csvReader import AnnoDict
+import indent as IND
 #cd C:\Users\jmfhuo\Desktop\xmlWriteWIP\
-#py annotationReader.py csvsource.txt
+#py xmlWriter.py csvsource.txt
 script_dir = os.path.dirname(__file__)
 rel_xml_path = "xmlsource.txt"
 abs_xml_path = os.path.join(script_dir, rel_xml_path)

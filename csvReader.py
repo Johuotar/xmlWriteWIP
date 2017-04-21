@@ -18,7 +18,7 @@ for csv in csvlist:
                 fileReader = CS.reader(file, delimiter=';', quotechar='|')
                 print("opened " + csv)
 
-                header = next(fileReader)#Python 3 has different kind of next
+                header = next(fileReader)#note Python 3 & 2 next differences
                 while not "sentence id" in header:
                         next(header)
 
@@ -39,4 +39,4 @@ for csv in csvlist:
                                 if row[anno_col].strip():
                                      AnnoDict[AnnotationID].append((AnnoCols[anno_col], row[anno_col]))
                                             
-                print(AnnoDict) #Lets see what the final result is
+                print(AnnoDict)#print the resulting annotation dictionary
