@@ -43,3 +43,8 @@ for xml in xmllist:
     print(res_path)
 xmlfile.close()
 print("xmlfile closed")
+
+
+if __name__ == '__main__':
+    pass
+#funktio kutsut
